@@ -144,4 +144,13 @@
       <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:type="xs:string">Saint</abc:AttributeValue>
     </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2000233331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:integer" Encoding="urn:abc4trust:1.0:encoding:integer:unsigned"
+      Type="Height">
+        <abc:FriendlyAttributeName lang="en">Height</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:integer">175</abc:AttributeValue>
+    </abc:Attribute>
 </abc:IssuancePolicyAndAttributes>

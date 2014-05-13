@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<abc:IssuancePolicyAndAttributes 
+    xmlns:abc="http://abc4trust.eu/wp2/abcschemav1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://abc4trust.eu/wp2/abcschemav1.0 ../../../../../../../../abc4trust-xml/src/main/resources/xsd/schema.xsd">
+
+    <abc:IssuancePolicy Version="1.0">
+    <abc:PresentationPolicy PolicyUID="http://thebestbank.com/creditcards/issuance/policy">
+      <abc:Message>
+        <abc:Nonce>KNsRu9cGzkaeabogeRVV</abc:Nonce>
+        <abc:ApplicationData>
+          <abc:TestApplicationData>
+          <abc:Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xsi:type="xs:string">Some data</abc:Data>
+          </abc:TestApplicationData>
+        </abc:ApplicationData>
+      </abc:Message>
+      </abc:PresentationPolicy>
+
+      <abc:CredentialTemplate>
+        <abc:CredentialSpecUID>http://MyFavoriteSoccerTeam/tickets/vip</abc:CredentialSpecUID>
+        <abc:IssuerParametersUID>http://ticketcompany/MyFavoriteSoccerTeam/issuance:idemix</abc:IssuerParametersUID>
+        <abc:UnknownAttributes/>
+      </abc:CredentialTemplate>
+    </abc:IssuancePolicy>
+
+    <abc:Attribute>
+      <abc:AttributeUID>-5027215341191833963</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="FirstName">
+        <abc:FriendlyAttributeName lang="en">first name</abc:FriendlyAttributeName>
+        <abc:FriendlyAttributeName lang="da">fornavn</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">John</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2715953330829768453</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="LastName">
+        <abc:FriendlyAttributeName lang="en">last name</abc:FriendlyAttributeName>
+        <abc:FriendlyAttributeName lang="da">efternavn</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">Dow</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2715953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="BirthName">
+        <abc:FriendlyAttributeName lang="en">birth name</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">diamond</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2715953330829768499</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="DocumentNumber">
+        <abc:FriendlyAttributeName lang="en">Document Number</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">3205023570215A</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2231744817504418831</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed" Type="DateOfBirth">
+        <abc:FriendlyAttributeName lang="en">Date of birth</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">1985-12-02Z</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2231744817504418832</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed"
+      Type="DateOfExpiry">
+        <abc:FriendlyAttributeName lang="en">Date of expiry</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">2016-11-02Z</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2231744817504418833</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed"
+      Type="DateOfIssue">
+        <abc:FriendlyAttributeName lang="en">Date of Issue</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">2002-11-01Z</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2015953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="Doctorate">
+        <abc:FriendlyAttributeName lang="en">Doctorate</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">NO</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2115953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="Nationality">
+        <abc:FriendlyAttributeName lang="en">Nationality</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">Dutch</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2215953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="PlaceOfBirth">
+        <abc:FriendlyAttributeName lang="en">Place of Birth</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">Amsterdam</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2315953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="ColorOfEyes">
+        <abc:FriendlyAttributeName lang="en"></abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">Red</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2745953331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="IssuingAuthority">
+        <abc:FriendlyAttributeName lang="en">Issuing Authority</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">Ministry of Defense</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-27150053331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="Residence">
+        <abc:FriendlyAttributeName lang="en">Residence</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">YES</abc:AttributeValue>
+    </abc:Attribute>
+    <abc:Attribute>
+      <abc:AttributeUID>-2715233331229768422</abc:AttributeUID>
+      <abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256"
+      Type="ReligiousName">
+        <abc:FriendlyAttributeName lang="en">Religious name</abc:FriendlyAttributeName>
+      </abc:AttributeDescription>
+      <abc:AttributeValue xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="xs:string">Saint</abc:AttributeValue>
+    </abc:Attribute>
+</abc:IssuancePolicyAndAttributes>

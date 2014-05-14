@@ -21,6 +21,9 @@
       <abc:IssuerAlternatives>
         <abc:IssuerParametersUID>http://ticketcompany/MyFavoriteSoccerTeam/issuance:idemix</abc:IssuerParametersUID>
       </abc:IssuerAlternatives>
+      <abc:DisclosedAttribute AttributeType="Residence" DataHandlingPolicy="http://www.sweetdreamsuites.com/policies/creditcards"/>
+      <abc:DisclosedAttribute AttributeType="PlaceOfBirth" DataHandlingPolicy="http://www.sweetdreamsuites.com/policies/creditcards"/>
+      <abc:DisclosedAttribute AttributeType="ReligiousName" DataHandlingPolicy="http://www.sweetdreamsuites.com/policies/creditcards"/>
     </abc:Credential>
     <abc:AttributePredicate Function="urn:oasis:names:tc:xacml:1.0:function:date-equal">
       <abc:Attribute CredentialAlias="#ticket" AttributeType="DateOfIssue" />

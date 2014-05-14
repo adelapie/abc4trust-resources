@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<att:Attributes xmlns:att="http://www.skidentity.de/att"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.skidentity.de/att Attributes.xsd">
+
+    <!-- Version of 20.11.2013 -->
+
+    <!-- ==================================== -->
+    <!-- Attributes for Authenticate requests -->
+    <!-- ==================================== -->
+
+    <!-- =========================== -->
+    <!-- Common Personal Attributes  -->
+    <!-- =========================== -->
+
+    <att:Attribute>
+		<att:ID>CommonName</att:ID>
+		<att:Description xml:lang="DE">
+			Spitzname, ID in einem sozialen Netz oder CommonName in einem X.509 Zertifikat
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Subject's alias, ID in a social network or CommonName in an X.509 certificate
+		</att:Description>
+		<att:Example>Feli3</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/namePerson/friendly</att:URI>
+		<att:URI>http://www.id4health.de/att/CommonName</att:URI>
+		<att:URI>http://www.skidentity.de/att/CommonName</att:URI>
+		<att:URI>http://www.futureid.org/att/CommonName</att:URI>
+		<att:FriendlyName xml:lang="DE">Common Name</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Common Name</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>FirstName</att:ID>
+		<att:Description xml:lang="DE">
+			Vorname
+		</att:Description>
+		<att:Description xml:lang="EN">
+			First or given name of subject
+		</att:Description>
+		<att:Example>Feli</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/namePerson/first</att:URI>
+		<att:URI>http://www.id4health.de/att/FirstName</att:URI>
+		<att:URI>http://www.skidentity.de/att/FirstName</att:URI>
+		<att:URI>http://www.futureid.org/att/FirstName</att:URI>
+		<att:FriendlyName xml:lang="DE">Vorname</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">First Name</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>LastName</att:ID>
+		<att:Description xml:lang="DE">
+			Nachname
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Last name or surname of subject
+		</att:Description>
+		<att:Example>Bödefeld</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/namePerson/last</att:URI>
+		<att:URI>http://www.id4health.de/att/LastName</att:URI>
+		<att:URI>http://www.skidentity.de/att/LastName</att:URI>
+		<att:URI>http://www.futureid.org/att/LastName</att:URI>
+		<att:FriendlyName xml:lang="DE">Nachname</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Last Name</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>AcademicTitle</att:ID>
+		<att:Description xml:lang="DE">
+			Akademischer Titel
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Academic title or honorific prefix for the subject's name
+		</att:Description>
+		<att:Example>Dr.</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/namePerson/title</att:URI>
+		<att:URI>http://www.id4health.de/att/AcademicTitle</att:URI>
+		<att:URI>http://www.skidentity.de/att/AcademicTitle</att:URI>
+		<att:URI>http://www.futureid.org/att/AcademicTitle</att:URI>
+		<att:FriendlyName xml:lang="DE">Akademischer Titel</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Academic title</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>Street</att:ID>
+		<att:Description xml:lang="DE">
+			Strasse
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Street
+		</att:Description>
+		<att:Example>Mühlenstr.</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/postalAddress/home/street</att:URI>
+		<att:URI>http://www.id4health.de/att/Street</att:URI>
+		<att:URI>http://www.skidentity.de/att/Street</att:URI>
+		<att:URI>http://www.futureid.org/att/Street</att:URI>
+		<att:FriendlyName xml:lang="DE">Straße</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Street</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>StreetNumber</att:ID>
+		<att:Description xml:lang="DE">
+			Hausnummer
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Street Number
+		</att:Description>
+		<att:Example>1</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/postalAddress/home/streetNumber</att:URI>
+		<att:URI>http://www.id4health.de/att/StreetNumber</att:URI>
+		<att:URI>http://www.skidentity.de/att/StreetNumber</att:URI>
+		<att:URI>http://www.futureid.org/att/StreetNumber</att:URI>
+		<att:FriendlyName xml:lang="DE">Hausnummer</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Street Number</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>City</att:ID>
+		<att:Description xml:lang="DE">
+			Ort
+		</att:Description>
+		<att:Description xml:lang="EN">
+			City
+		</att:Description>
+		<att:Example>Weener</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/city/home</att:URI>
+		<att:URI>http://www.id4health.de/att/City</att:URI>
+		<att:URI>http://www.skidentity.de/att/City</att:URI>
+		<att:URI>http://www.futureid.org/att/City</att:URI>
+		<att:FriendlyName xml:lang="DE">Ort</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">City</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>State</att:ID>
+		<att:Description xml:lang="DE">
+			Staat
+		</att:Description>
+		<att:Description xml:lang="EN">
+			State or Province
+		</att:Description>
+		<att:Example>Bayern</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/state/home</att:URI>
+		<att:URI>http://www.id4health.de/att/State</att:URI>
+		<att:URI>http://www.skidentity.de/att/State</att:URI>
+		<att:URI>http://www.futureid.org/att/State</att:URI>
+		<att:FriendlyName xml:lang="DE">Staat</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">State</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>ZipCode</att:ID>
+		<att:Description xml:lang="DE">
+			Postleitzahl
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Postal Code in regional format
+		</att:Description>
+		<att:Example>26826</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/postalCode/home</att:URI>
+		<att:URI>http://www.id4health.de/att/ZipCode</att:URI>
+		<att:URI>http://www.skidentity.de/att/ZipCode</att:URI>
+		<att:URI>http://www.futureid.org/att/ZipCode</att:URI>
+		<att:FriendlyName xml:lang="DE">Postleitzahl</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Postal Code</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>Country</att:ID>
+		<att:Description xml:lang="DE">
+			Land nach ISO 3166-1
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Country according to ISO 3166-1
+		</att:Description>
+		<att:Example>DE</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/country/home/</att:URI>
+		<att:URI>http://www.id4health.de/att/Country</att:URI>
+		<att:URI>http://www.skidentity.de/att/Country</att:URI>
+		<att:URI>http://www.futureid.org/att/Country</att:URI>
+		<att:FriendlyName xml:lang="DE">Land</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Country</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>Nationality</att:ID>
+		<att:Description xml:lang="DE">
+			Nationalität
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Nationality
+		</att:Description>
+		<att:Example>DE</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/Nationality</att:URI>
+		<att:URI>http://www.skidentity.de/att/Nationality</att:URI>
+		<att:URI>http://www.futureid.org/att/Nationality</att:URI>
+		<att:FriendlyName xml:lang="DE">Nationalität</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Nationality</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>Gender</att:ID>
+		<att:Description xml:lang="DE">
+			Geschlecht "M" (männlich) oder "F" (weiblich)
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Gender "M" (male) oder "F" (female)
+		</att:Description>
+		<att:Example>M</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/person/gender</att:URI>
+		<att:URI>http://www.id4health.de/att/Gender</att:URI>
+		<att:URI>http://www.skidentity.de/att/Gender</att:URI>
+		<att:URI>http://www.futureid.org/att/Gender</att:URI>
+		<att:FriendlyName xml:lang="DE">Geschlecht</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Gender</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>DateOfBirth</att:ID>
+		<att:Description xml:lang="DE">
+			Geburtsdatum
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Date of birth
+		</att:Description>
+		<att:Example>1979-01-01</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}date
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/birthDate</att:URI>
+		<att:URI>http://www.id4health.de/att/DateOfBirth</att:URI>
+		<att:URI>http://www.skidentity.de/att/DateOfBirth</att:URI>
+		<att:URI>http://www.futureid.org/att/DateOfBirth</att:URI>
+		<att:FriendlyName xml:lang="DE">Geburtsdatum</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Date of birth</att:FriendlyName>
+    </att:Attribute>
+
+
+    <!-- ================================= -->
+    <!-- Communication Related Attributes  -->
+    <!-- ================================= -->
+
+    <att:Attribute>
+		<att:ID>Email</att:ID>
+		<att:Description xml:lang="DE">
+			E-Mail Adresse
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Internet SMTP email address as per RFC2822
+		</att:Description>
+		<att:Example>john@isp.example.com</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/email</att:URI>
+		<att:URI>http://www.id4health.de/att/email</att:URI>
+		<att:URI>http://www.skidentity.de/att/email</att:URI>
+		<att:URI>http://www.futureid.org/att/email</att:URI>
+		<att:FriendlyName xml:lang="DE">E-Mail</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">E-Mail</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>Phone</att:ID>
+		<att:Description xml:lang="DE">
+			Telefonnummern in Form von tel: (RFC 3966) oder sip:/ sips: URIs (RFC 3261).
+			Input ist optional und kann verwendet werden um nur bestimmte Nummertypen (siehe Type Element) anzufragen.
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Phone numbers formatted as tel: (RFC 3966) or sip:/ sips: URIs (RFC 3261).
+			Input is optional and can be used to request only specific number types (see Type element).
+		</att:Description>
+		<att:Example>
+			response:
+			<PhoneNumber>
+				<Value>tel:+49-89-123-123-123</Value>
+			</PhoneNumber>
+			<PhoneNumber>
+				<Type>mobile</Type>
+				<Value>tel:+49-171-123-123-123</Value>
+			</PhoneNumber>
+			<PhoneNumber>
+				<Type>voip</Type>
+				<Value>sips:user@example.com</Value>
+			</PhoneNumber>
+		</att:Example>
+		<att:InputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:InputFormat>
+		<att:OutputFormat>
+			{http://www.skidentity.de/att}PhoneNumberType
+		</att:OutputFormat>
+		<att:URI>http://axschema.org/contact/phone</att:URI>
+		<att:URI>http://www.id4health.de/att/phone</att:URI>
+		<att:URI>http://www.skidentity.de/att/phone</att:URI>
+		<att:URI>http://www.futureid.org/att/phone</att:URI>
+		<att:FriendlyName xml:lang="DE">Telefonnummer</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Phone</att:FriendlyName>
+    </att:Attribute>
+
+
+	<!-- not an identity attribute, but an environment attribute
+    <att:Attribute>
+		<att:ID>Locale</att:ID>
+		<att:Description xml:lang="DE">
+			Lokalisierungsinformation (Sprachcode und Ländercode)
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Localization information (Language code and country code)
+		</att:Description>
+		<att:Example>en_GB</att:Example>
+	-->
+		<!-- The locales supported by Facebook are available at
+		     https://www.facebook.com/translations/FacebookLocales.xml -->
+	<!--
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}string
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/locale</att:URI>
+		<att:URI>http://www.skidentity.de/att/locale</att:URI>
+		<att:URI>http://www.futureid.org/att/locale</att:URI>
+		<att:FriendlyName xml:lang="DE">Lokalisierungsinformation</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Locale</att:FriendlyName>
+    </att:Attribute>
+	-->
+
+
+    <att:Attribute>
+		<att:ID>Profile-URI</att:ID>
+		<att:Description xml:lang="DE">
+			Benutzerprofil URI.
+			Input ist das Präfix der angefragten URI. Z.B. https://www.facebook.com
+		</att:Description>
+		<att:Description xml:lang="EN">
+			User profile URI.
+			Input is the prefix of the requested URI. E.g. https://www.facebook.com
+		</att:Description>
+		<att:Example>https://www.facebook.com/florianvk</att:Example>
+		<att:Example>http://www.linkedin.com/pub/open-ecard/63/443/a99</att:Example>
+		<att:Example>https://www.xing.com/profile/Detlef_Huehnlein</att:Example>
+		<att:InputFormat>
+			{http://www.w3.org/2001/XMLSchema}anyURI
+		</att:InputFormat>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}anyURI
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/profile-uri</att:URI>
+		<att:URI>http://www.skidentity.de/att/profile-uri</att:URI>
+		<att:URI>http://www.futureid.org/att/profile-uri</att:URI>
+		<att:FriendlyName xml:lang="DE">Profil-URI</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Profile-URI</att:FriendlyName>
+    </att:Attribute>
+
+
+    <att:Attribute>
+		<att:ID>Website-URI</att:ID>
+		<att:Description xml:lang="DE">
+			Website (Homepage) URI des Benutzers
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Website (Homepage) URI of the user
+		</att:Description>
+		<att:Example>http://www.this-is-me.com/</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}anyURI
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/website-uri</att:URI>
+		<att:URI>http://www.skidentity.de/att/website-uri</att:URI>
+		<att:URI>http://www.futureid.org/att/website-uri</att:URI>
+		<att:FriendlyName xml:lang="DE">Website-URI</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Website-URI</att:FriendlyName>
+    </att:Attribute>
+
+
+
+    <!-- ============================== -->
+    <!-- Credential Related Attributes  -->
+    <!-- ============================== -->
+
+    <att:Attribute>
+		<att:ID>IDNumber</att:ID>
+		<att:Description xml:lang="DE">
+			Identifikator (z.B. Krankenversicherungsnummer, Zertifikatsseriennummer)
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Identifier
+		</att:Description>
+		<att:Example>X110030766</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IDNumber</att:URI>
+		<att:URI>http://www.skidentity.de/att/IDNumber</att:URI>
+		<att:URI>http://www.futureid.org/att/IDNumber</att:URI>
+		<att:FriendlyName xml:lang="DE">
+			Identifikator
+		</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">
+			Identifier
+		</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>IDType</att:ID>
+		<att:Description xml:lang="DE">
+			Ausweis-Typ
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Credential Type
+		</att:Description>
+		<att:Example>http://bsi.bund.de/cif/npa.xml</att:Example>
+		<!-- is equal to CardInfo/CardType/ObjectIdentifier in case of card -->
+		<!-- or urn:ietf:rfc:5280 in case of a (software-based) X.509-certificate -->
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}anyURI
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IDType</att:URI>
+		<att:URI>http://www.skidentity.de/att/IDType</att:URI>
+		<att:URI>http://www.futureid.org/att/IDType</att:URI>
+		<att:FriendlyName xml:lang="DE">Ausweis-Typ</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Credential Type</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>IDIssuer</att:ID>
+		<att:Description xml:lang="DE">
+			Ausweis-Herausgeber
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Credential Issuer
+		</att:Description>
+		<att:Example>O=SCA Deutsche Post Com GmbH, CN=SCA DPCom 4:PN</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IDIssuer</att:URI>
+		<att:URI>http://www.skidentity.de/att/IDIssuer</att:URI>
+		<att:URI>http://www.futureid.org/att/IDIssuer</att:URI>
+		<att:FriendlyName xml:lang="DE">Ausweis-Herausgeber</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Credential Issuer</att:FriendlyName>
+    </att:Attribute>
+
+	<att:Attribute>
+		<att:ID>IssuingState</att:ID>
+		<att:Description xml:lang="DE">
+			Herausgebender Staat als ISO 3166 code
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Issuing State as ISO 3166 code
+		</att:Description>
+		<att:Example>DE</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IssuingState</att:URI>
+		<att:URI>http://www.skidentity.de/att/IssuingState</att:URI>
+		<att:URI>http://www.futureid.org/att/IssuingState</att:URI>
+		<att:FriendlyName xml:lang="DE">Herausgebender Staat</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Issuing State</att:FriendlyName>
+	</att:Attribute>
+
+    <att:Attribute>
+		<att:ID>IDValidFrom</att:ID>
+		<att:Description xml:lang="DE">
+			Gültig ab
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Valid from
+		</att:Description>
+		<att:Example>2010-02-24</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}date
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IDValidFrom</att:URI>
+		<att:URI>http://www.skidentity.de/att/IDValidFrom</att:URI>
+		<att:URI>http://www.futureid.org/att/IDValidFrom</att:URI>
+		<att:FriendlyName xml:lang="DE">Gültig ab</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Valid from</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>IDValidUntil</att:ID>
+		<att:Description xml:lang="DE">
+			Gültig bis
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Valid until
+		</att:Description>
+		<att:Example>2012-02-24</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}date
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/IDValidUntil</att:URI>
+		<att:URI>http://www.skidentity.de/att/IDValidUntil</att:URI>
+		<att:URI>http://www.futureid.org/att/IDValidUntil</att:URI>
+		<att:FriendlyName xml:lang="DE">Gültig bis</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Valid until</att:FriendlyName>
+    </att:Attribute>
+
+
+    <!-- =========================== -->
+    <!-- Privacy Related Attributes  -->
+    <!-- =========================== -->
+
+    <att:Attribute>
+		<att:ID>eIdentifier</att:ID>
+		<att:Description xml:lang="DE">
+			Sektorspezifischer Identifikator (Pseudonym)
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Sector specific identifier
+		</att:Description>
+		<att:Example>A1124711AB14</att:Example>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/eIdentifier</att:URI>
+		<att:URI>http://www.skidentity.de/att/eIdentifier</att:URI>
+		<att:URI>http://www.futureid.org/att/eIdentitfier</att:URI>
+		<att:FriendlyName xml:lang="DE">Pseudonym</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">eIdentifier</att:FriendlyName>
+    </att:Attribute>
+
+    <att:Attribute>
+		<att:ID>AgeVerification</att:ID>
+		<att:Description xml:lang="DE">
+			Altersverifikation. Siehe auch Attribut Age.
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Age verification. See also attribute Age.
+		</att:Description>
+		<att:Example>
+			request:
+			<saml:AttributeValue xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns="http://www.skidentity.de/att">
+				<ReferenceValue>18</ReferenceValue>
+				<TimeZone>Europe/Berlin</TimeZone>
+			</saml:AttributeValue>
+			response: true
+		</att:Example>
+		<att:InputFormat>
+			{http://www.skidentity.de/att}AgeVerificationInputType
+		</att:InputFormat>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}boolean
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/AgeVerification</att:URI>
+		<att:URI>http://www.skidentity.de/att/AgeVerification</att:URI>
+		<att:URI>http://www.futureid.org/att/AgeVerification</att:URI>
+		<att:FriendlyName xml:lang="DE">Altersverifikation</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Age verification</att:FriendlyName>
+    </att:Attribute>
+
+	<!-- Disabled because needs template for the different country/ purpose
+    <att:Attribute>
+		<att:ID>AgeRange</att:ID>
+		<att:Description xml:lang="DE">
+			Etwaiges Alter
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Age Range
+		</att:Description>
+		<att:Example>min=18,max=20</att:Example>
+	-->
+		<!-- Facebook supports the following age ranges:
+		     13-17
+		     18-20
+		     21+ (no <max> element)
+		 -->
+	<!--
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}AgeRangeStructure
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/AgeRange</att:URI>
+		<att:URI>http://www.skidentity.de/att/AgeRange</att:URI>
+		<att:URI>http://www.futureid.org/att/AgeRange</att:URI>
+		<att:FriendlyName xml:lang="DE">Altersgruppe</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Age Range</att:FriendlyName>
+    </att:Attribute>
+	-->
+
+
+    <att:Attribute>
+		<att:ID>Age</att:ID>
+		<att:Description xml:lang="DE">
+			Alter.
+			Optional kann eine Zeitzone (Offset) im ISO 8601 Format (+-hh[[:]mm]) oder als TZ Name angegeben werden.
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Age. Optionally a time zone offset in ISO 8601 format (+-hh[[:]mm]) or a TZ name can be given.
+		</att:Description>
+		<att:Example>request: +01, response: 42</att:Example>
+		<att:Example>request: +01:00, response: 42</att:Example>
+		<att:Example>request: Europe/Berlin, response: 42</att:Example>
+		<att:InputFormat>
+			{http://www.w3.org/2001/XMLSchema}normalizedString
+		</att:InputFormat>
+		<att:OutputFormat>
+			{http://www.w3.org/2001/XMLSchema}nonNegativeInteger
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/Age</att:URI>
+		<att:URI>http://www.skidentity.de/att/Age</att:URI>
+		<att:URI>http://www.futureid.org/att/Age</att:URI>
+		<att:FriendlyName xml:lang="DE">Alter</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Age</att:FriendlyName>
+    </att:Attribute>
+
+
+    <!-- ============================= -->
+    <!-- Signature Related Attributes  -->
+    <!-- ============================= -->
+
+    <att:Attribute>
+		<att:ID>Document</att:ID>
+		<att:Description xml:lang="DE">
+			Dokument
+		</att:Description>
+		<att:Description xml:lang="EN">
+			Document
+		</att:Description>
+		<att:Example>Some document, which is to be signed.</att:Example>
+		<att:InputFormat>
+			{urn:oasis:names:tc:dss:1.0:core:schema}Document
+		</att:InputFormat>
+		<att:OutputFormat>
+			{http://www.skidentity.de/att}DocumentOrSignatureObjectType
+		</att:OutputFormat>
+		<att:URI>http://www.id4health.de/att/Document</att:URI>
+		<att:URI>http://www.skidentity.de/att/Document</att:URI>
+		<att:URI>http://www.futureid.org/att/Document</att:URI>
+		<att:FriendlyName xml:lang="DE">Dokument</att:FriendlyName>
+		<att:FriendlyName xml:lang="EN">Document</att:FriendlyName>
+    </att:Attribute>
+
+</att:Attributes>

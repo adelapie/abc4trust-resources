@@ -13,10 +13,14 @@ import org.jaxen.JaxenException;
 import org.jaxen.XPath;
 import org.jaxen.dom4j.Dom4jXPath;
 
+import java.lang.Process;
+
 public class App {
 
   public static final String requestedAttributes = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/att.xml";
   public static final String presentationPolicyDest = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/presentationPolicyAlternatives.xml";
+  public static final String tokenGenerationScript = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/genPresentationToken.sh";
+  public static final String tokenGenerationScriptPath = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/";
 
   public static final String policyFirstPart = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
                                                "<abc:PresentationPolicyAlternatives xmlns:abc=\"http://abc4trust.eu/wp2/abcschemav1.0\"" +
@@ -65,6 +69,11 @@ public class App {
     FileWriter fw = new FileWriter(presentationPolicyDest);
     fw.write(sw.toString());
     fw.close();
+
+    System.out.println("TST");
+
+    Process pr = Runtime.getRuntime().exec(tokenGenerationScript, null, new File(tokenGenerationScriptPath));
+
    } catch (Exception e) {
     e.printStackTrace();
    }

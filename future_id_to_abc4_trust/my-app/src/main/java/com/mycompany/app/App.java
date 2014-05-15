@@ -31,50 +31,42 @@ public class App {
   
   public static void main( String[] args ) {
 
-  File xmlFile = new File(requestedAttributes);
-  SAXReader reader = new SAXReader();
+   File xmlFile = new File(requestedAttributes);
+   SAXReader reader = new SAXReader();
  
-  Document dom4jDocument = null;
-  XPath path = null;
-  List<Element> results = null;
+   Document dom4jDocument = null;
+   XPath path = null;
+   List<Element> results = null;
 
-  StringWriter sw = new StringWriter();
-  sw.write(policyFirstPart);
+   StringWriter sw = new StringWriter();
+   sw.write(policyFirstPart);
  
-  try {
- 
-   dom4jDocument = reader.read(xmlFile);
-   path = new Dom4jXPath("Attributes/Attribute/ID");
-   results = path.selectNodes(dom4jDocument);
- 
+   try {
+    dom4jDocument = reader.read(xmlFile);
+    path = new Dom4jXPath("Attributes/Attribute/ID");
+    results = path.selectNodes(dom4jDocument);
    
-   for (Element element : results) {
+    for (Element element : results) {
      String disclosedAttribute = new String("<abc:DisclosedAttribute AttributeType=\"" + element.getData() + "\" " + "DataHandlingPolicy=\"http://www.sweetdreamsuites.com/policies/creditcards\"/>");
      sw.write(disclosedAttribute);
      sw.write("\n");
-   }
- 
-  } catch (JaxenException e) {
-   e.printStackTrace();
-  } catch (DocumentException e) {
-   e.printStackTrace();
-  }
-
-  
-  sw.write(policySecondPart);
-  System.out.println(sw.toString());
-
-  try {
-
-  FileWriter fw = new FileWriter(presentationPolicyDest);
-  fw.write(sw.toString());
-  fw.close();
-
-  } catch (Exception e) {
-   e.printStackTrace();
-  }
-
-
-
     }
+ 
+   } catch (JaxenException e) {
+     e.printStackTrace();
+   } catch (DocumentException e) {
+     e.printStackTrace();
+   }
+
+   sw.write(policySecondPart);
+   System.out.println(sw.toString());
+
+   try {
+    FileWriter fw = new FileWriter(presentationPolicyDest);
+    fw.write(sw.toString());
+    fw.close();
+   } catch (Exception e) {
+    e.printStackTrace();
+   }
+  }
 }

@@ -1,81 +1,88 @@
+
+/** 
+* Simple class to interface the user side of ABC4Trust
+* into the IRMA add-on of Future ID.
+*/
+
 package com.mycompany.app;
 
 import java.io.File;
 import java.util.List;
 import java.io.FileWriter;
 import java.io.StringWriter;
-
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
-import org.jaxen.JaxenException;
-import org.jaxen.XPath;
-import org.jaxen.dom4j.Dom4jXPath;
-
 import java.lang.Process;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.charset.Charset;
 
 public class App {
 
-  public static final String requestedAttributes = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/att.xml";
-  public static final String presentationPolicyDest = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/presentationPolicyAlternatives.xml";
-  public static final String tokenGenerationScript = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/genPresentationToken.sh";
-  public static final String tokenGenerationScriptPath = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/";
-
-  public static final String policyFirstPart = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>" +
-                                               "<abc:PresentationPolicyAlternatives xmlns:abc=\"http://abc4trust.eu/wp2/abcschemav1.0\"" +
-                                               " Version=\"1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"" +
-                                               " xsi:schemaLocation=\"http://abc4trust.eu/wp2/abcschemav1.0 ../../../../../../../../abc4trust-xml/src/main/resources/xsd/schema.xsd\">" +
-                                               "<abc:PresentationPolicy PolicyUID=\"http://MyFavoriteSoccerTeam/policies/match/842/vip\">" +
-                                               "<abc:Message><abc:ApplicationData>MyFavoriteSoccerTeam vs. OtherTeam</abc:ApplicationData></abc:Message>" +
-                                               "<abc:Credential Alias=\"#ticket\"><abc:CredentialSpecAlternatives><abc:CredentialSpecUID>http://MyFavoriteSoccerTeam/tickets/vip</abc:CredentialSpecUID>" +
-                                               "</abc:CredentialSpecAlternatives><abc:IssuerAlternatives><abc:IssuerParametersUID>http://ticketcompany/MyFavoriteSoccerTeam/issuance:idemix</abc:IssuerParametersUID></abc:IssuerAlternatives>";
-                                              
-  public static final String policySecondPart = "</abc:Credential></abc:PresentationPolicy></abc:PresentationPolicyAlternatives>";
-  
-  public static void main( String[] args ) {
-
-   File xmlFile = new File(requestedAttributes);
-   SAXReader reader = new SAXReader();
- 
-   Document dom4jDocument = null;
-   XPath path = null;
-   List<Element> results = null;
-
-   StringWriter sw = new StringWriter();
-   sw.write(policyFirstPart);
- 
-   try {
-    dom4jDocument = reader.read(xmlFile);
-    path = new Dom4jXPath("Attributes/Attribute/ID");
-    results = path.selectNodes(dom4jDocument);
+  private String serialPolicy;
+  private String generationScript;
+  private String generationScriptPath;
    
-    for (Element element : results) {
-     String disclosedAttribute = new String("<abc:DisclosedAttribute AttributeType=\"" + element.getData() + "\" " + "DataHandlingPolicy=\"http://www.sweetdreamsuites.com/policies/creditcards\"/>");
-     sw.write(disclosedAttribute);
-     sw.write("\n");
-    }
- 
-   } catch (JaxenException e) {
-     e.printStackTrace();
-   } catch (DocumentException e) {
-     e.printStackTrace();
-   }
-
-   sw.write(policySecondPart);
-   System.out.println(sw.toString());
-
-   try {
-    FileWriter fw = new FileWriter(presentationPolicyDest);
-    fw.write(sw.toString());
-    fw.close();
-
-    System.out.println("TST");
-
-    Process pr = Runtime.getRuntime().exec(tokenGenerationScript, null, new File(tokenGenerationScriptPath));
-
-   } catch (Exception e) {
-    e.printStackTrace();
-   }
+  public App(String serialPolicy, String generationScript, String generationScriptPath) {
+   this.serialPolicy = serialPolicy;
+   this.generationScript = generationScript;
+   this.generationScriptPath = generationScriptPath;
   }
+  
+  public void generatePolicyToken(String presentationPolicyDest) {
+
+    StringWriter sw = new StringWriter();
+    sw.write(this.serialPolicy);
+ 
+    try {
+
+     FileWriter fw = new FileWriter(presentationPolicyDest);
+     fw.write(sw.toString());
+     fw.close();
+
+     Process pr = Runtime.getRuntime().exec(this.generationScript, null, new File(this.generationScriptPath));
+
+    } catch (Exception e) {
+     e.printStackTrace();
+    }
+  }
+
+  public void selfTest(String verificationScript, String generationScriptPath) {
+
+    try {
+
+     Process pr = Runtime.getRuntime().exec(verificationScript, null, new File(generationScriptPath));
+
+    } catch (Exception e) {
+     e.printStackTrace();
+    }
+  }
+
+  public String getPresentationToken(String pathToPresentationToken) {
+   byte[] encoded = null;
+  
+   try {
+    encoded = Files.readAllBytes(Paths.get(pathToPresentationToken));
+   } catch(Exception e) {
+     e.printStackTrace();
+   }
+   
+   return new String(encoded,  Charset.defaultCharset());
+  }
+
+  public static void main( String[] args ) {
+   String testPolicy = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><PresentationPolicyAlternatives xmlns=\"http://abc4trust.eu/wp2/abcschemav1.0\" Version=\"1.0\"><PresentationPolicy PolicyUID=\"http://MyFavoriteSoccerTeam/policies/match/842/vip\"><Message><Nonce>2Hkb+I0tbst/dA==</Nonce><ApplicationData>        MyFavoriteSoccerTeam vs. OtherTeam      </ApplicationData></Message><Credential Alias=\"#ticket\"><CredentialSpecAlternatives><CredentialSpecUID>http://MyFavoriteSoccerTeam/tickets/vip</CredentialSpecUID></CredentialSpecAlternatives><IssuerAlternatives><IssuerParametersUID RevocationInformationUID=\"urn:abc4trust:1.0:revocation:information/4hjqwl0htcw1hbc\">http://ticketcompany/MyFavoriteSoccerTeam/issuance:idemix</IssuerParametersUID></IssuerAlternatives><DisclosedAttribute AttributeType=\"City\" DataHandlingPolicy=\"http://www.sweetdreamsuites.com/policies/creditcards\"/><DisclosedAttribute AttributeType=\"State\" DataHandlingPolicy=\"http://www.sweetdreamsuites.com/policies/creditcards\"/></Credential><AttributePredicate Function=\"urn:oasis:names:tc:xacml:1.0:function:date-equal\"><Attribute CredentialAlias=\"#ticket\" AttributeType=\"IDValidFrom\"/><ConstantValue xmlns:abc=\"http://abc4trust.eu/wp2/abcschemav1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">2002-11-01Z</ConstantValue></AttributePredicate></PresentationPolicy></PresentationPolicyAlternatives>";
+   String testGenerationScript = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/future_id/genPresentationToken.sh";
+   String testGenerationScriptPath = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/future_id/";
+
+   String testVerificationScript = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/future_id/verify.sh";
+   String testVerificationScriptPath = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/future_id/";
+   String testPresentationPolicyDest = "/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/tutorial-resources/future_id_to_abc4_trust/my-app/src/main/java/com/mycompany/app/presentationPolicyAlternatives.xml";
+
+   App abcUser = new App(testPolicy, testGenerationScript, testGenerationScriptPath);
+
+   abcUser.generatePolicyToken(testPresentationPolicyDest);
+   abcUser.selfTest(testVerificationScript, testVerificationScriptPath);
+   System.out.println(abcUser.getPresentationToken("/home/vmr/second_future_id_abc_4_trust/p2abcengine-master/Code/core-abce/abce-services/future_id/presentationPolicyAlternativesAndPresentationToken.xml"));
+  }
+
 }

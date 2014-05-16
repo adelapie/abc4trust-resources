@@ -1,0 +1,77 @@
+
+ABC4Trust/IRMA to FutureID
+==========================
+
+For both cases:
+
+They receive a serialized xml file with the list of attributes to be
+disclosed together with a signed nonce from the verifier:
+
+a) sig_v(n1) is verified against pk_v
+b) if OK, n2 is computed as H(sig_v(n1) || n1)
+c) n2 is used in the case of ABC4Trust and IRMA
+
+* ABC4Trust
+
+1. Get the list of attributes and nonce from the DIDAuthenticate request.
+
+The list of attributes is based on the RequestedAttributes 
+Structure defined in ISO/IEC 24727. First, the list is iterated and for each
+att:Attribute structure the att:ID field is selected. For each field, an
+abc:DisclosedAttribute statement is created. This is done into presentationPolicyAlternatives.xml
+
+Finally, a presentation token suiable for an user is created according to
+those values:
+
+# Create presentation policy alternatives.
+# This method is not specified in H2.2.
+echo "Create presentation policy alternatives"
+curl -X GET --header 'Content-Type: text/xml' -d @tutorial-resources/presentationPolicyAlternatives.xml 'http://localhost:9300/verification/createPresentationPolicy/' > presentationPolicyAlternatives.xml
+
+# Create presentation UI return.
+# This method is not specified in H2.2.
+echo "Create presentation UI return"
+curl -X POST --header 'Content-Type: text/xml' -d @presentationPolicyAlternatives.xml 'http://localhost:9200/user/createPresentationToken/' > presentationReturn.xml
+
+# Setup uiPresentationReturn.xml.
+UiContext=`cat presentationReturn.xml | sed 's/^.*<uiContext>//' | sed 's/<\/uiContext>.*//'`
+#echo ${UiContext}
+cat tutorial-resources/uiPresentationReturn.xml | sed "s#REPLACE-THIS-CONTEXT#${UiContext}#" > uiPresentationReturn.xml
+  
+# Create presentation token.
+# This method is not specified in H2.2.
+echo "Create presentation token"
+curl -X POST --header 'Content-Type: text/xml' -d @uiPresentationReturn.xml 'http://localhost:9200/user/createPresentationTokenUi/' > presentationToken.xml
+
+# Setup presentationPolicyAlternativesAndPresentationToken.xml.
+presentationPolicy=`cat presentationPolicyAlternatives.xml | sed 's/^.*<PresentationPolicyAlternatives xmlns="http:\/\/abc4trust.eu\/wp2\/abcschemav1.0" Version="1.0">//' | sed 's/<\/PresentationPolicyAlternatives>.*//'`
+presentationToken=`cat presentationToken.xml | sed 's/^.*<PresentationToken xmlns="http:\/\/abc4trust.eu\/wp2\/abcschemav1.0" Version="1.0">//' | sed 's/<\/PresentationToken>.*//'`
+# echo "${presentationPolicy}"
+# echo "${presentationToken}"
+echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' > presentationPolicyAlternativesAndPresentationToken.xml
+echo '<PresentationPolicyAlternativesAndPresentationToken xmlns="http://abc4trust.eu/wp2/abcschemav1.0" Version="1.0"> <PresentationPolicyAlternatives>' >> presentationPolicyAlternativesAndPresentationToken.xml
+echo "${presentationPolicy}" >> presentationPolicyAlternativesAndPresentationToken.xml
+echo '</PresentationPolicyAlternatives>' >> presentationPolicyAlternativesAndPresentationToken.xml
+echo '<PresentationToken>' >> presentationPolicyAlternativesAndPresentationToken.xml
+echo "${presentationToken}" >> presentationPolicyAlternativesAndPresentationToken.xml
+echo '</PresentationToken>' >> presentationPolicyAlternativesAndPresentationToken.xml
+echo '</PresentationPolicyAlternativesAndPresentationToken>' >> presentationPolicyAlternativesAndPresentationToken.xml
+  
+3. presentationPolicyAlternativesAndPresentationToken.xml is sent back to the verifier in the
+DIDAuthenticate response.
+
+* IRMA
+
+1. Get the list of attributes and nonce from the DIDAuthenticate request.
+
+The list of attributes is based on the RequestedAttributes 
+Structure defined in ISO/IEC 24727. First, the list is iterated and for each
+att:Attribute structure the att:ID field is selected. For each field, a bit vector is generated
+where '1' means revealed and '0' hidden. This vector is used for sending the correct APDU to the card.
+
+2. The proof is retrieved from the card and the result is crafted in a presentationPolicyAlternativesAndPresentationToken.xml
+file from ABC4Trust.
+
+3. presentationPolicyAlternativesAndPresentationToken.xml is sent back to
+the verifier in the DIDAuthenticate response.
+

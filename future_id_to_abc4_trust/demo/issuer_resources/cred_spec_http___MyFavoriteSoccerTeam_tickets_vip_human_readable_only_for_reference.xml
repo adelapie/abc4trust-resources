@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<abc:CredentialSpecification KeyBinding="true" Revocable="true" Version="Version 1.0" xmlns:abc="http://abc4trust.eu/wp2/abcschemav1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://abc4trust.eu/wp2/abcschemav1.0 ../../../../../../../../../abc4trust-xml/src/main/resources/xsd/schema.xsd">
+<abc:SpecificationUID>http://MyFavoriteSoccerTeam/tickets/vip</abc:SpecificationUID>
+<abc:FriendlyCredentialName lang="en">VIP ticket to soccer match</abc:FriendlyCredentialName>
+<abc:DefaultImageReference>http://MyFavoriteSoccerTeam/tickets/vip/img</abc:DefaultImageReference>
+<abc:AttributeDescriptions MaxLength="256">
+<abc:AttributeDescription DataType="xs:integer" Encoding="urn:abc4trust:1.0:encoding:integer:unsigned" Type="http://abc4trust.eu/wp2/abcschemav1.0/revocationhandle"/>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="CommonName">
+<abc:FriendlyAttributeName lang="en">CommonName</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="FirstName">
+<abc:FriendlyAttributeName lang="en">Name</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="LastName">
+<abc:FriendlyAttributeName lang="en">Lastname</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="AcademicTitle">
+<abc:FriendlyAttributeName lang="en">AcademicTitle</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Street">
+<abc:FriendlyAttributeName lang="en">Street</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:integer" Encoding="urn:abc4trust:1.0:encoding:integer:unsigned" Type="StreetNumber">
+<abc:FriendlyAttributeName lang="en">StreetNumber</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="City">
+<abc:FriendlyAttributeName lang="en">City</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="State">
+<abc:FriendlyAttributeName lang="en">State</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="ZipCode">
+<abc:FriendlyAttributeName lang="en">ZipCode</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Country">
+<abc:FriendlyAttributeName lang="en">Country</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Nationality">
+<abc:FriendlyAttributeName lang="en">Nationality</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Gender">
+<abc:FriendlyAttributeName lang="en">Gender</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed" Type="DateOfBirth">
+<abc:FriendlyAttributeName lang="en">Date of birth</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Email">
+<abc:FriendlyAttributeName lang="en">Email</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Phone">
+<abc:FriendlyAttributeName lang="en">Phone</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Profile-URI">
+<abc:FriendlyAttributeName lang="en">Profile-URI</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="Website-URI">
+<abc:FriendlyAttributeName lang="en">Website-URI</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="IDNumber">
+<abc:FriendlyAttributeName lang="en">IDNumber</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="IDType">
+<abc:FriendlyAttributeName lang="en">IDType</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="IDIssuer">
+<abc:FriendlyAttributeName lang="en">IDIssuer</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="IssuingState">
+<abc:FriendlyAttributeName lang="en">IssuingState</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed" Type="IDValidFrom">
+<abc:FriendlyAttributeName lang="en">ID Valid From</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:date" Encoding="urn:abc4trust:1.0:encoding:date:unix:signed" Type="IDValidUntil">
+<abc:FriendlyAttributeName lang="en">ID Valid Until</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="eIdentifier">
+<abc:FriendlyAttributeName lang="en">eIdentifier</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:string" Encoding="urn:abc4trust:1.0:encoding:string:sha-256" Type="AgeVerification">
+<abc:FriendlyAttributeName lang="en">AgeVerification</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+<abc:AttributeDescription DataType="xs:integer" Encoding="urn:abc4trust:1.0:encoding:integer:unsigned" Type="Age">
+<abc:FriendlyAttributeName lang="en">Age</abc:FriendlyAttributeName>
+</abc:AttributeDescription>
+</abc:AttributeDescriptions>
+</abc:CredentialSpecification>
